@@ -16,18 +16,20 @@ https://sky.pro/wiki/profession/kak-vychislit-dispersiyu-vyborki/
 array = [2, 4, -6, 8, 10]
 deviations_sum = 0
 index = 0
-sum_positive_items = 0 
+sum_positive_items = 0
+quantity_positive_items = 0
 while index <= len(array) - 1:
     if array[index] > 0:
         sum_positive_items += array[index]
+        quantity_positive_items += 1
     index += 1
 
 index = 0
-average_value = sum_positive_items / len(array)
+average_value = sum_positive_items / quantity_positive_items
 
 while index <= len(array) - 1:
     if array[index] > 0:
         deviations_sum = deviations_sum + (array[index] - average_value)**2
     index += 1
-dispersion = deviations_sum / (len(array) - 1)
-print(dispersion) # 10.0
+dispersion = deviations_sum / (quantity_positive_items - 1)
+print(dispersion) # 13.333333333333334
