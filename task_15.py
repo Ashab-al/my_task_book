@@ -3,12 +3,11 @@
 С какого индекса значение элемента начинает превышать значение индекса?
 """
 
-array = [0]
-index = 0
-k = 2
 
-while array[index] <= index:
-    array += [index**2 / k]
-    index += 1
+i = 1
+k = 5
 
-print(array)
+while i**2 / k < i:
+    i += 1 
+    print(f"Индекс: {i} | Значение: {i**2 / k}")
+
